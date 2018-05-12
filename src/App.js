@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Router from './router/Router'
+import Router from 'router/Router'
 import { hot } from 'react-hot-loader'
 
 class App extends Component {
