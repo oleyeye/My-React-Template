@@ -8,7 +8,7 @@ Check the package.json for dependency.
 - react
 - react-dom
 - react-router-dom
-- redux(yet to add)
+- redux
 
 ## Dev dependency
 - babel 6.0
