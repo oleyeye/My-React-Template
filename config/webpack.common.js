@@ -6,7 +6,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        app: ['babel-polyfill', './src/index.js']
+        app: ['babel-polyfill', './src/index.jsx']
     },
     plugins: [
         new CleanWebpackPlugin(['dist'], { root: path.resolve(__dirname , '..'), verbose: true }),
@@ -44,9 +44,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: [
+                    "babel-loader",
+                    "eslint-loader"
+                ]
             }
         ]
     },
@@ -67,15 +70,16 @@ module.exports = {
         }
     },
     resolve: {
+        extensions: ['.js', '.jsx'],
         alias: {
-            containers: path.resolve(__dirname, '../src/containers'),
-            components: path.resolve(__dirname, '../src/components'),
-            router: path.resolve(__dirname, '../src/router'),
-            actions: path.resolve(__dirname, '../src/actions'),
-            reducers: path.resolve(__dirname, '../src/reducers'),
-            utils: path.resolve(__dirname, '../src/utils'),
-            images: path.resolve(__dirname, '../src/images'),
-            styles: path.resolve(__dirname, '../src/styles')
+            containers: path.resolve(__dirname, '../src/containers/'),
+            components: path.resolve(__dirname, '../src/components/'),
+            router: path.resolve(__dirname, '../src/router/'),
+            actions: path.resolve(__dirname, '../src/actions/'),
+            reducers: path.resolve(__dirname, '../src/reducers/'),
+            utils: path.resolve(__dirname, '../src/utils/'),
+            images: path.resolve(__dirname, '../src/images/'),
+            styles: path.resolve(__dirname, '../src/styles/')
         }
     }
 };

@@ -1,0 +1,29 @@
+{
+    "extends": "airbnb",
+    "rules":{
+        "indent": ["error", 4],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    },
+    "globals": {
+        "windows": true,
+        "document": true
+    },
+    "settings": {
+        "import/resolver": {
+           "webpack": { "config": "./config/webpack.common.js"} }
+    },
+    "plugins": ["react"],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "modules": true,
+            "blockBindings": true,
+            "arrowFunctions": true,
+            "objectLiteralShorthandMethods": true,
+            "objectLiteralShorthandProperties": true,
+            "templateStrings": true
+        }
+    }
+}
