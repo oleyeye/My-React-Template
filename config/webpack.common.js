@@ -38,10 +38,23 @@ module.exports = {
                 })
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    'file-loader'
-                ]
+                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 10000,
+                        name: 'static/media/[name].[hash:8].[ext]'
+                    }
+                }]
+            },
+            {
+                test: [/\.eot$/, /\.ttf$/, /\.svg$/, /\.woff$/, /\.woff2$/],
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: 'static/media/[name].[hash:8].[ext]'
+                    }
+                }]
             },
             {
                 test: /\.jsx?$/,
