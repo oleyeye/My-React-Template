@@ -1,4 +1,5 @@
 {
+    "parser": "babel-eslint",
     "extends": "airbnb",
     "rules":{
         "indent": ["error", 4],
@@ -13,17 +14,5 @@
     "settings": {
         "import/resolver": {
            "webpack": { "config": "./config/webpack.common.js"} }
-    },
-    "plugins": ["react"],
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "modules": true,
-            "blockBindings": true,
-            "arrowFunctions": true,
-            "objectLiteralShorthandMethods": true,
-            "objectLiteralShorthandProperties": true,
-            "templateStrings": true
-        }
     }
 }

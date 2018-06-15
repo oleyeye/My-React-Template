@@ -9,9 +9,9 @@ class Home extends Component {
         };
     }
 
-    handelTextChange = (textValue) => {
+    handelTextChange = (e) => {
         this.setState({
-            TextValue: textValue,
+            TextValue: e.target.value,
         });
     }
 
